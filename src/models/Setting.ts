@@ -74,7 +74,7 @@ export const SettingNames = [
 
     'SettingCacheTTL',
 
-    'TagResourcesAddress',
+    'FrenResourcesAddress',
 
     'WebServerPort',
     'WebServerBaseUrl',

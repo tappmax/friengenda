@@ -221,9 +221,9 @@ const Settings : {[key in SettingName] : Omit<Setting,'name'> & {required ?: boo
         access : 'Protected'
     },
 
-    TagResourcesAddress : {
-        value : '6501 Deane Hill Dr.|Knoxville, TN 37919|(865) 670-1844|billingdebt@tagresources.com|www.tagresources.com',
-        description : 'Tag Resources Address to list on statement headers, pipes for newlines'
+    FrenResourcesAddress : {
+        value : '1531 Journey Drive|Murfreesboro, TN 37130|(555) 555-5555|franz@friengenda.com|www.friengenda.com',
+        description : 'Friengenda Address to list on statement headers, pipes for newlines'
     },
 
     WebServerPort : {

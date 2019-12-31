@@ -3,7 +3,7 @@ import { isProduction } from "../app";
 
 export type FriendlyDetails = string | { [key : string] : string };
 
-export default class TagError extends Error {
+export default class FrenError extends Error {
     public innerError : any;
     public status : number;
     public name : string;

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as express from "express";
-import TagError, { FriendlyDetails, errorToResponse } from '@errors/TagError';
+import FrenError, { FriendlyDetails, errorToResponse } from '@errors/FrenError';
 import InternalServerError from "@errors/InternalServerError";
 import {logger} from '@services/LoggerService';
 import DatabaseError from "@errors/DatabaseError";
@@ -39,7 +39,7 @@ export function errorResponse (res: express.Response, err: Error)  {
     if(err instanceof InternalServerError)
         logger.error('InternalServerError', err.innerError);
 
-    if(err instanceof TagError)
+    if(err instanceof FrenError)
         return res.status(err.status).json(errorToResponse(err.toJSON()));
 
     // Log unknown errors

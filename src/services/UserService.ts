@@ -8,7 +8,7 @@ import { logger } from '@services/LoggerService';
 import NotFoundError from '@errors/NotFoundError';
 import DatabaseError from '@errors/DatabaseError';
 import AlreadyExistsError from '@errors/AlreadyExistsError';
-import TagError from '@errors/TagError';
+import FrenError from '@errors/FrenError';
 import InternalServerError from '@errors/InternalServerError';
 import { getSettingValue } from './SettingService';
 import NotAuthorizedError from '@errors/NotAuthorizedError';
@@ -229,7 +229,7 @@ export async function addUser(options : AddUserOptions): Promise<number> {
         if(err instanceof DatabaseError && err.details.constraint == 'users_email_key')        
             throw new AlreadyExistsError ();
 
-        else if (err instanceof TagError)
+        else if (err instanceof FrenError)
             throw err;
 
         throw new InternalServerError (err);

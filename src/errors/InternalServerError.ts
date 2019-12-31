@@ -1,6 +1,6 @@
-import TagError from "./TagError";
+import FrenError from "./FrenError";
 
-export default class InternalServerError extends TagError {     
+export default class InternalServerError extends FrenError {     
     constructor (innerError?: any) {
         super('InternalServerError', 500, undefined, innerError);
     }

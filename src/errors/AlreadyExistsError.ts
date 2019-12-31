@@ -1,6 +1,6 @@
-import TagError from "./TagError";
+import FrenError from "./FrenError";
 
-export default class AlreadyExistsError extends TagError {    
+export default class AlreadyExistsError extends FrenError {    
     constructor (details ?: any) {
         super('AlreadyExists', 400, details);
     }
