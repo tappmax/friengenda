@@ -1,0 +1,71 @@
+/api/v1/enums/ProductType:
+
+  #-----------------------------------------------------------------------------------
+  # GET /api/v1/enums/ProductType (GetProductTypeEnum)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetProductTypeEnum
+    tags:
+      - Enums
+    responses:
+      '200':
+        content: 
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+
+/api/v1/enums/PaymentType:
+
+  #-----------------------------------------------------------------------------------
+  # GET /api/v1/enums/PaymentType (GetPaymentTypeEnum)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetPaymentTypeEnum
+    tags:
+      - Enums
+    responses:
+      '200':
+        content: 
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+
+/api/v1/enums/PaymentMethod:
+
+  #-----------------------------------------------------------------------------------
+  # GET /api/v1/enums/PaymentMethod (GetPaymentMethodEnum)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetPaymentMethodEnum
+    tags:
+      - Enums
+    responses:
+      '200':
+        content: 
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+
+/api/v1/enums/PlanExternalIdType:
+
+  #-----------------------------------------------------------------------------------
+  # GET /api/v1/enums/PlanExternalIdType (GetPlanExternalIdTypeEnum)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetPlanExternalIdTypeEnum
+    tags:
+      - Enums
+    responses:
+      '200':
+        content: 
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string

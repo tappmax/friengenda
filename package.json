@@ -1,0 +1,134 @@
+{
+  "name": "friengenda",
+  "version": "0.0.1",
+  "description": "Keep up with friends and schedule chillz",
+  "main": "app.js",
+  "scripts": {
+    "pretest": "node ./node_modules/knex/bin/cli.js migrate:latest",
+    "prestart": "node ./node_modules/knex/bin/cli.js migrate:latest",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "start": "node build/app",
+    "test": "jest --runInBand",
+    "client": "cd client && npm run start",
+    "client:build": "cd client && npm run build",
+    "build:start": "npm run build && npm run start",
+    "start:all": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "busboy": "^0.3.1",
+    "cors": "^2.8.5",
+    "debug": "^2.2.0",
+    "email-templates": "^6.0.3",
+    "email-validator": "^2.0.4",
+    "exceljs-node": "^1.6.7",
+    "express": "^4.14.0",
+    "express-jwt": "^5.3.1",
+    "express-static-proxy": "^1.0.0",
+    "g": "^2.0.1",
+    "i18n": "^0.8.4",
+    "js-yaml": "^3.13.1",
+    "json-refs": "^3.0.13",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.18.4",
+    "lodash": "^4.17.15",
+    "markdown": "0.5.0",
+    "module-alias": "^2.2.2",
+    "moment": "^2.24.0",
+    "node-cryptojs-aes": "^0.4.0",
+    "nodemailer": "^6.3.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pdfkit": "^0.11.0",
+    "pg": "^7.12.1",
+    "pug": "^2.0.4",
+    "semver": "^6.3.0",
+    "swagger-ui-express": "^4.1.2",
+    "uuid": "^3.3.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/busboy": "^0.2.3",
+    "@types/chai": "^4.2.4",
+    "@types/crypto-js": "^3.1.43",
+    "@types/debug": "0.0.30",
+    "@types/email-templates": "^3.5.1",
+    "@types/express": "4.17.0",
+    "@types/express-jwt": "0.0.42",
+    "@types/express-serve-static-core": "^4.16.11",
+    "@types/i18n": "^0.8.6",
+    "@types/jest": "^24.0.22",
+    "@types/js-yaml": "^3.12.1",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/lodash": "^4.14.145",
+    "@types/mime": "^1.3.1",
+    "@types/node": "^8.10.58",
+    "@types/nodemailer": "^6.2.2",
+    "@types/passport": "^1.0.1",
+    "@types/passport-local": "^1.0.33",
+    "@types/pdfkit": "^0.10.4",
+    "@types/pg": "^7.11.2",
+    "@types/pug": "^2.0.4",
+    "@types/semver": "^6.2.0",
+    "@types/serve-static": "^1.13.3",
+    "@types/supertest": "^2.0.8",
+    "@types/swagger-ui-express": "^3.0.1",
+    "@types/uuid": "^3.4.6",
+    "chai": "^4.2.0",
+    "chai-jest-diff": "^1.0.2",
+    "concurrently": "5.0.0",
+    "jest": "^24.9.0",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
+  },
+  "jest": {
+    "bail": 1,
+    "verbose": true,
+    "testEnvironment": "node",
+    "preset": "ts-jest",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/tests/TestService.ts"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/build/"
+    ],
+    "moduleNameMapper": {
+      "@(services|controllers|models|errors|helpers)/(.*)$": "<rootDir>/src/$1/$2"
+    }
+  },
+  "_moduleAliases": {
+    "@models": "build/models",
+    "@services": "build/services",
+    "@controllers": "build/controllers",
+    "@errors": "build/errors",
+    "@helpers": "build/helpers"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tappmax/friengenda.git"
+  },
+  "keywords": [
+    "schedule",
+    "agenda",
+    "friend",
+    "friends",
+    "calendar",
+    "hang",
+    "out",
+    "chill"
+  ],
+  "author": "Friengenda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tappmax/friengenda/issues"
+  },
+  "homepage": "https://github.com/tappmax/friengenda#readme"
+}

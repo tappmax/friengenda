@@ -1,0 +1,46 @@
+/v1/version/check:
+
+  #-----------------------------------------------------------------------------------
+  # POST /v1/version/check (CheckVersion)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: CheckVersion
+    tags:
+      - Version
+    parameters:
+      - name: version
+        description: Version to check
+        required: true
+        in: query
+        schema:
+          type: string
+          example: '1.1.1'
+      - name: origin
+        description: Origin to check
+        required: true
+        in: query
+        schema:
+          type: string
+          example: 't2t'
+      - name: platform
+        description: Platform to check
+        required: true
+        in: query
+        schema:
+          type: string
+          enum:
+            - ios
+            - android
+          example: 'ios'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            scema:
+              type: object
+              properties:
+                packageName:
+                  type: string
+                  description: Package used to upgrade to latest version or null if no upgrade is required
+                  

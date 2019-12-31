@@ -1,0 +1,183 @@
+
+#-----------------------------------------------------------------------------------
+# Setting
+#-----------------------------------------------------------------------------------
+Setting:
+  type: object
+  properties:
+    name:
+      type: string
+      example: Timeout
+    value:
+      type: string
+      example: '1000'          
+
+#-----------------------------------------------------------------------------------
+# ErrorCode
+#-----------------------------------------------------------------------------------
+ErrorCode:
+  type: string
+  enum:
+    - AlreadyExists
+    - DatabaseError
+    - InvalidParameter
+    - MissingParameter
+    - PaymentError
+  example: InvalidParameter
+  description: >
+    Codes:
+      * `AlreadyExists` - The resource being added already exists.
+      * `DatabaseError` - An unhandled error occurred while communicating with the database (check details for more information)
+      * `InvalidParameter` - The value of a parameter is invalid.
+      * `MissingParameter` - A request parameter is missing (see details for parameter name)
+      * `PaymentError` - A payment related error occurred (check details for PaymentErrorCode)
+
+#-----------------------------------------------------------------------------------
+# ErrorBadRequest
+#-----------------------------------------------------------------------------------
+ErrorBadRequest:
+  type: object
+  properties:
+    error:
+      $ref: '#/components/schemas/ErrorCode'
+    details:
+      type: object
+      example: "..."
+
+#-----------------------------------------------------------------------------------
+# ErrorNotFound
+#-----------------------------------------------------------------------------------
+ErrorNotFound:
+  type: object      
+  properties:
+    error:
+      type: string
+      example: 'NotFound'
+    details:
+      type: string
+      example: "..."
+
+#-----------------------------------------------------------------------------------
+# ErrorNotAuthorized
+#-----------------------------------------------------------------------------------
+ErrorNotAuthorized:
+  type: object      
+  properties:
+    error:
+      type: string
+      example: 'NotAuthorized'
+    details:
+      type: string
+      example: "..."
+
+#-----------------------------------------------------------------------------------
+# UserStatus
+#-----------------------------------------------------------------------------------
+UserStatus:
+  description: User status
+  example: Active
+  type: string
+  enum:
+    - Unconfirmed
+    - Active
+    - Disabled
+
+#-----------------------------------------------------------------------------------
+# UserRole
+#-----------------------------------------------------------------------------------
+UserRole:
+  type: object
+  properties: 
+    id:
+      description: Unique identifier
+      type: string
+      example: ProductApprove
+    description:
+      description: Detailed description of the role
+      type: string
+      example: Allows user to approve pending products
+    value:
+      description: Current value of the role
+      type: boolean
+      example: true
+      
+#-----------------------------------------------------------------------------------
+# User
+#-----------------------------------------------------------------------------------
+User:
+  type: object
+  properties:
+    id:
+      description: Unique identifier
+      type: number
+      example: 1
+    firstName:
+      description: First name
+      type: string
+      example: Bob
+    lastName:
+      description: Last name
+      type: string
+      example: Evans
+    email:
+      description: Email address
+      type: string
+      example: buyer1@test.com
+    status:
+      $ref: '#/components/schemas/UserStatus'
+    created:
+      description: Date/Time that the user was created
+      type: string
+      example: 01 Jan 2019 00:00:00 GMT
+    lastLogin:
+      description: Date/Time that the user last logged in
+      type: string
+      example: 01 Jan 2019 00:00:00 GMT
+
+#-----------------------------------------------------------------------------------
+# UserInfo
+#-----------------------------------------------------------------------------------
+UserInfo:
+  type: object
+  properties:
+    id:
+      description: Unique identifier
+      type: number
+      example: 1
+    name:
+      description: Name of user
+      type: string
+      example: Truck To Table
+    description:
+      description: Company description
+      type: string
+      example: Connecting farmers to to your table
+
+#-----------------------------------------------------------------------------------
+# UserUpdate
+#-----------------------------------------------------------------------------------
+UserUpdate:
+  type: object
+  properties:
+    firstName:
+      description: First name of buyer
+      type: string
+      example: Bob
+    lastName:
+      description: Last name of buyer
+      type: string
+      example: Evans
+
+#-----------------------------------------------------------------------------------
+# UserAdd
+#-----------------------------------------------------------------------------------
+UserAdd:
+  allOf:
+    - required:
+        - email
+    - properties:
+        email:
+          description: Users email and account name
+          type: string
+          example: email@host.com
+    - $ref: '#/components/schemas/UserUpdate'

@@ -1,0 +1,13 @@
+UserAdd:
+  required: true
+  content: 
+    application/json:
+      schema:
+        $ref: '#/components/schemas/UserAdd'
+
+UserUpdate:
+  required: true
+  content: 
+    application/json:
+      schema:
+        $ref: '#/components/schemas/UserUpdate'

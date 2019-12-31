@@ -1,0 +1,53 @@
+/v1/settings:
+
+  #-----------------------------------------------------------------------------------
+  # POST /v1/settings (GetSettings)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetSettings
+    tags:
+      - Application Settings
+    parameters:
+      - name: name
+        description: Name(s) of or more settings to retrieve
+        required: false
+        in: query
+        schema:
+          type: string
+          example: '1234'
+      - name: useCache
+        description: Set to 'true' to use cached settings (default is 'true')
+        required: false
+        in: query
+        schema:
+          type: boolean
+          example: true
+    responses:
+      '200':
+        $ref: '#/components/responses/Settings'
+
+  #-----------------------------------------------------------------------------------
+  # POST /v1/settings (SetSetting)
+  #-----------------------------------------------------------------------------------
+  post:
+    summary: SetSetting
+    tags:
+      - Application Settings
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                description: Name of the setting
+                type: string
+              value:
+                description: Value of the setting
+                type: string
+              expires:
+                description: Date the setting expires
+                type: string
+    responses:
+      '200':
+        $ref: '#/components/responses/Setting'          

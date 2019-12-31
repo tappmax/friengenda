@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: Friengenda
+  version: 1.0.0
+
+servers:
+  - url: http://TODO/
+    description: Production server
+  - url: http://TODO/
+    description: Development server
+
+tags:
+  - name: Auth
+  - name: Enums
+  - name: User
+  - name: Version
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  
+  parameters:
+    $ref: ./parameters.yaml
+
+  schemas:
+    $ref: ./schemas.yaml
+
+  responses:
+    $ref: ./responses.yaml
+
+  requestBodies:
+    $ref: ./requestBodies.yaml
+
+security: 
+  - bearerAuth: []
+
+paths:
+  - $ref: ./controllers/AuthController.yaml
+  - $ref: ./controllers/UserController.yaml
+  - $ref: ./controllers/SettingsController.yaml
+  - $ref: ./controllers/ReportController.yaml
+  - $ref: ./controllers/VersionController.yaml
+  - $ref: ./controllers/ManagerController.yaml
+  - $ref: ./controllers/ContractController.yaml
+  - $ref: ./controllers/AdvisorController.yaml
+  - $ref: ./controllers/BrokerController.yaml
+  - $ref: ./controllers/PlanController.yaml
+  - $ref: ./controllers/EnumController.yaml
+  

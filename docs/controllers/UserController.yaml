@@ -1,0 +1,126 @@
+/api/v1/users:
+  get:
+    summary: GetAllUsers
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+    responses:
+      '200':
+        $ref: '#/components/responses/Users'
+
+/api/v1/users/search:
+  get:
+    summary: SearchUsers
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - name: email
+        in: query
+        required: false
+        description: Optional user email to search for
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        description: Optional UserStatus to search for
+        schema:
+          $ref: '#/components/schemas/UserStatus'
+
+    responses:
+      '200':
+        $ref: '#/components/responses/Users'
+
+/api/v1/users/{userId}:
+  get:
+    summary: GetUser
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    responses:
+      '200':
+        description: User
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      '404':    
+        $ref: '#/components/responses/NotFound'
+  
+  patch:
+    summary: UpdateUser
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    requestBody:
+      $ref: '#/components/requestBodies/UserUpdate'
+    responses:
+      '200':
+        description: User
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      '404':    
+        $ref: '#/components/responses/NotFound'
+
+/api/v1/users/{userId}/info:
+  get:
+    summary: GetUserInfo
+    description: Returns a users public information
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    responses:
+      '200':
+        description: User
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInfo'
+      '404':    
+        $ref: '#/components/responses/NotFound'
+
+/api/v1/users/{userId}/roles:
+
+  #-----------------------------------------------------------------------------------
+  # GET /api/v1/users/{userId}/roles (GetUserRoles)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetUserRoles
+    description: Returns all roles for a given user
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/userId'
+    responses:
+      '200':
+        $ref: '#/components/responses/UserRoles'
+      '404':    
+        $ref: '#/components/responses/NotFound'  
+
+/api/v1/users/{userId}/roles/{roleId}:
+
+  #-----------------------------------------------------------------------------------
+  # GET /api/v1/users/{userId}/roles/{roleId} (GetUserRole)
+  #-----------------------------------------------------------------------------------
+  get:
+    summary: GetUserRole
+    description: Returns an role for a given user
+    tags:
+      - User
+    parameters:
+      - $ref: '#/components/parameters/userId'
+      - $ref: '#/components/parameters/roleId'
+    responses:
+      '200':
+        $ref: '$/components/responses/UserRole'
+      '404':    
+        $ref: '#/components/responses/NotFound'  

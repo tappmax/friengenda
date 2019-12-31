@@ -1,0 +1,98 @@
+page:
+  name: page
+  description: Index of page to retreive [1:N]
+  in: query
+  required: false
+  schema:
+    type: number
+    default: 1
+
+limit:
+  name: limit
+  description: Maximum number of results to return
+  in: query
+  required: false
+  schema:
+    type: number
+    default: 50
+
+userId:
+  name: userId
+  description: Unique identifier of the user or 'current' for the current authorized user.
+  in: path
+  required: true
+  schema:
+    type: string
+    example: current
+
+month:
+  name: month
+  description: Month in the format 'MM-YYYY'
+  in: query
+  required: false
+  schema:
+    type: string
+    example: 11-2019
+
+contractId:
+  name: contractId
+  description: Unique identifier of a contract
+  in: path
+  required: true
+  schema:
+    type: string
+    example: 931413
+
+planId:
+  name: planId
+  description: Unique identifier of a plan
+  in: path
+  required: true
+  schema:
+    type: string
+    example: 001
+
+advisorId:
+  name: advisorId
+  description: Unique identifier of an advisor
+  in: path
+  required: true
+  schema:
+    type: integer
+    example: 1
+
+brokerId:
+  name: brokerId
+  description: Unique identifier of a broker
+  in: path
+  required: true
+  schema:
+    type: integer
+    example: 1
+
+locationId:
+  name: locationId
+  description: Unique identifier of a pickup location.
+  in: path
+  required: true
+  schema:
+    type: integer
+    example: 1234
+
+groupId:
+  name: groupId
+  description: Unique identifier of the group
+  in: path
+  required: true
+  schema:
+    type: integer
+    example: 1
+
+roleId:
+  name: roleId
+  description: Unique identifier of the user role
+  in: path
+  required: true
+  schema:
+    type: string
+    example: UserView

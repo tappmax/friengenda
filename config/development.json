@@ -1,0 +1,28 @@
+{
+    "CryptoSecretKey" : "",
+
+    "DatabaseHost": "",
+    "DatabasePort": 5432,
+    "DatabaseName": "friengenda",
+    "DatabaseUsername": "postgres",
+    "DatabasePassword": "",
+
+    "JWTSecretKey" : "",
+
+    "LoggerAWSGroup" : "friengenda",
+    "LoggerAWSStream" : "friengenda-dev",
+
+    "EmailHost" : "",
+    "EmailUsername" : "",
+    "EmailPassword" : "",
+    "EmailNoReply" : "The Friengenda Team <noreply@friengenda.com>",
+
+    "AdminFirstName": "",
+    "AdminLastName": "",
+    "AdminEmail": "",
+    "AdminPassword": "",
+
+    "WebServerBaseUrl" : "http://localhost:8081/v1",
+    "WebServerPort" : 8081
+}
+

@@ -1,0 +1,148 @@
+Manager:
+  description: Manager
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/Manager'
+
+Managers:
+  description: Manager Array
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Manager'
+
+Advisor:
+  description: Advisor
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/Advisor'
+
+Advisors:
+  description: Advisor Array
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Advisor'
+
+Broker:
+  description: Broker 
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/Broker'
+
+Brokers:
+  description: Broker Array
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Broker'
+
+Plan:
+  description: Plan
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/Plan'
+
+Plans:
+  description: Plan Array
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Plan'
+          
+Contract:
+  description: Contract
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/Contract'
+
+Contracts:
+  description: Contract Array
+  content: 
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Contract'
+          
+UserRole:
+  description: User Role
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/UserRole'
+
+UserRoles:
+  description: Array of UserRoles
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/UserRole'
+
+Settings:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Setting'    
+
+Setting:
+  description: OK
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/Setting'    
+
+User:
+  description: OK
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/User' 
+
+Users:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/User' 
+
+BadRequest:
+  description: BAD_REQUEST
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/ErrorBadRequest'            
+
+NotAuthorized:
+  description: NOT_AUTHORIZED
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/ErrorNotFound'
+
+NotFound:
+  description: NOT_FOUND
+  content:
+    application/json:
+      schema:
+        $ref: '#/components/schemas/ErrorNotAuthorized'

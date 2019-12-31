@@ -102,3 +102,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+#visual studio
+.suo
+.vscode/*.code-workspace
+
+/build
+/bin
+/obj
+/config/local*
+/tsconfig.tsbuildinfo
+/s3
+
+.DS_Store

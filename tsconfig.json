@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "./build",
+        "target": "es6",
+        "lib": [ "es6", "esnext.asynciterable" ],
+        "sourceMap": true,
+        "removeComments": false,
+        "experimentalDecorators": true,
+        "baseUrl": "./src",
+        "rootDir": "./src",
+        "incremental": true,
+        "paths": {
+            "@models/*" : ["models/*"],
+            "@services/*" : ["services/*"],
+            "@controllers/*" : ["controllers/*"],
+            "@errors/*" : ["errors/*"],
+            "@helpers/*" : ["helpers/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "client"
+    ]
+}
